@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph"
+    app:startDestination="@id/calculationBodyIndexFragment">
+
+    <fragment
+        android:id="@+id/calculationBodyIndexFragment"
+        android:name="com.hfad.bodyindex.calbodyindex.CalculationBodyIndexFragment"
+        android:label="calculation_body_index_fragment"
+        tools:layout="@layout/calculation_body_index_fragment" >
+        <action
+            android:id="@+id/action_calculationBodyIndexFragment_to_resultBodyIndexFragment"
+            app:destination="@id/resultBodyIndexFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultBodyIndexFragment"
+        android:name="com.hfad.bodyindex.resultbodyindex.ResultBodyIndexFragment"
+        android:label="fragment_result_body_index"
+        tools:layout="@layout/fragment_result_body_index" >
+        <action
+            android:id="@+id/action_resultBodyIndexFragment_to_calculationBodyIndexFragment"
+            app:destination="@id/calculationBodyIndexFragment" />
+        <argument
+            android:name="result"
+            app:argType="float" />
+    </fragment>
+
+</navigation>
